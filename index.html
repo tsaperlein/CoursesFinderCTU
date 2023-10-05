@@ -32,5 +32,24 @@
             <a class="course" href="https://moodle.fel.cvut.cz/courses/BE4M39NUR">Something</a>
         </div>
     </div> -->
+
+    <script>
+        // Delete course Safety in Electrical Engineering for a master´s degree after 10th of October
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+        var yyyy = today.getFullYear();
+        if(dd<10){
+                dd='0'+dd
+            } 
+            if(mm<10){
+                mm='0'+mm
+            }
+        today = yyyy+'-'+mm+'-'+dd;
+        if (today > '2020-10-1') {
+            var element = document.getElementsByClassName("course")[1];
+            element.parentNode.removeChild(element);
+        }
+    </script>
 </body>
 </html>
